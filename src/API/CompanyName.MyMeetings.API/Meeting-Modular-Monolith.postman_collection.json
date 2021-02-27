@@ -1,0 +1,20 @@
+{
+	"info": {
+		"_postman_id": "8de69ad2-9540-4539-97d4-42d51beedfe2",
+		"name": "Meeting-Modular-Monolith",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetToken",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}

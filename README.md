@@ -1760,8 +1760,12 @@ List of technologies, frameworks and libraries used for implementation:
 - Build [DatabaseMigrator](src/Database/DatabaseMigrator) application
 - run database migrations:
 
-```shell
+``` shell
 dotnet DatabaseMigrator.dll "connection_string" "scripts_directory_path"
+```
+
+``` shell
+dotnet DatabaseMigrator.dll "Server=.\sqlexpress;Database=MyMeetings;Trusted_Connection=True;" "C:\GitRepos\modular-monolith-with-ddd\src\Database\CompanyName.MyMeetings.Database\Scripts\Migrations"
 ```
 
 *"connection_string"* - connection string to your database <br/>

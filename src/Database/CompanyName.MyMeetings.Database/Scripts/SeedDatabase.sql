@@ -4,7 +4,7 @@ INSERT INTO users.UserRegistrations VALUES
 	'2EBFECFC-ED13-43B8-B516-6AC89D51C510',
 	'testMember@mail.com',
 	'testMember@mail.com',
-	'ANO7TKjxh/Dom6LG0dyoQfJciLca+e1itHQ6BZMQYs+aMbKL9MjCv6bq4gy4+MRY0w==', -- testMemberPass
+	'ANO7TKjxh/Dom6LG0dyoQfJciLca+e1itHQ6BZMQYs+aMbKL9MjCv6bq4gy4+MRY0w==', --  hash value <-- password is --> testMemberPass
 	'John',
 	'Doe',
 	'John Doe',
@@ -18,7 +18,7 @@ INSERT INTO users.Users VALUES
 	'2EBFECFC-ED13-43B8-B516-6AC89D51C510',
 	'testMember@mail.com',
 	'testMember@mail.com',
-	'ANO7TKjxh/Dom6LG0dyoQfJciLca+e1itHQ6BZMQYs+aMbKL9MjCv6bq4gy4+MRY0w==', -- testMemberPass
+	'ANO7TKjxh/Dom6LG0dyoQfJciLca+e1itHQ6BZMQYs+aMbKL9MjCv6bq4gy4+MRY0w==', -- password is --> testMemberPass
 	1,
 	'John',
 	'Doe',
@@ -44,7 +44,7 @@ INSERT INTO users.UserRegistrations VALUES
 	'4065630E-4A4C-4F01-9142-0BACF6B8C64D',
 	'testAdmin@mail.com',
 	'testAdmin@mail.com',
-	'AK0qplH5peUHwnCVuzW9zy0JGZTTG6/Ji88twX+nw9JdTUwqa3Wol1K4m5aCG9pE2A==', -- testAdminPass
+	'AK0qplH5peUHwnCVuzW9zy0JGZTTG6/Ji88twX+nw9JdTUwqa3Wol1K4m5aCG9pE2A==', -- password is --> testAdminPass
 	'Jane',
 	'Doe',
 	'Jane Doe',
@@ -58,7 +58,7 @@ INSERT INTO users.Users VALUES
 	'4065630E-4A4C-4F01-9142-0BACF6B8C64D',
 	'testAdmin@mail.com',
 	'testAdmin@mail.com',
-	'AK0qplH5peUHwnCVuzW9zy0JGZTTG6/Ji88twX+nw9JdTUwqa3Wol1K4m5aCG9pE2A==', -- testAdminPass
+	'AK0qplH5peUHwnCVuzW9zy0JGZTTG6/Ji88twX+nw9JdTUwqa3Wol1K4m5aCG9pE2A==', -- password is --> testAdminPass
 	1,
 	'Jane',
 	'Doe',
