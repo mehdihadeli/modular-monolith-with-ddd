@@ -4,6 +4,7 @@ using CompanyName.MyMeetings.Modules.Meetings.Domain.Members.MemberSubscriptions
 
 namespace CompanyName.MyMeetings.Modules.Meetings.Domain.Members.MemberSubscriptions
 {
+    // Get its data from payment `SubscriptionExpirationDateChangedIntegrationEvent` integration event
     public class MemberSubscription : Entity, IAggregateRoot
     {
         public MemberSubscriptionId Id { get; private set; }

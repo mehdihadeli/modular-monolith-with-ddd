@@ -26,7 +26,7 @@ namespace CompanyName.MyMeetings.Modules.Meetings.IntegrationTests.SeedWork
         protected ILogger Logger { get; private set; }
 
         protected IMeetingsModule MeetingsModule { get; private set; }
-
+        protected IMeetingsStartup MeetingsStartup { get; private set; }
         protected IEmailSender EmailSender { get; private set; }
 
         protected ExecutionContextMock ExecutionContext { get; private set; }
@@ -52,6 +52,10 @@ namespace CompanyName.MyMeetings.Modules.Meetings.IntegrationTests.SeedWork
             EmailSender = Substitute.For<IEmailSender>();
             ExecutionContext = new ExecutionContextMock(Guid.NewGuid());
 
+            MeetingsModule = new MeetingsModule();
+            MeetingsStartup = new MeetingsStartup();
+            
+            
             MeetingsStartup.Initialize(
                 ConnectionString,
                 ExecutionContext,
@@ -59,7 +63,6 @@ namespace CompanyName.MyMeetings.Modules.Meetings.IntegrationTests.SeedWork
                 new EmailsConfiguration("from@email.com"),
                 null);
 
-            MeetingsModule = new MeetingsModule();
         }
 
         [TearDown]

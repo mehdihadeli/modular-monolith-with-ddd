@@ -13,6 +13,7 @@ using CompanyName.MyMeetings.BuildingBlocks.Application;
 using CompanyName.MyMeetings.BuildingBlocks.Domain;
 using CompanyName.MyMeetings.BuildingBlocks.Infrastructure.Emails;
 using CompanyName.MyMeetings.Modules.Administration.Infrastructure.Configuration;
+using CompanyName.MyMeetings.Modules.Meetings.Application.Contracts;
 using CompanyName.MyMeetings.Modules.Meetings.Infrastructure.Configuration;
 using CompanyName.MyMeetings.Modules.Payments.Infrastructure.Configuration;
 using CompanyName.MyMeetings.Modules.UserAccess.Application.IdentityServer;
@@ -83,6 +84,7 @@ namespace CompanyName.MyMeetings.API
 
         public void ConfigureContainer(ContainerBuilder containerBuilder)
         {
+            // register modules (components) public interfaces to access to sub modules
             containerBuilder.RegisterModule(new MeetingsAutofacModule());
             containerBuilder.RegisterModule(new AdministrationAutofacModule());
             containerBuilder.RegisterModule(new UserAccessAutofacModule());
@@ -164,7 +166,9 @@ namespace CompanyName.MyMeetings.API
 
             var emailsConfiguration = new EmailsConfiguration(_configuration["EmailsConfiguration:FromEmail"]);
 
-            MeetingsStartup.Initialize(
+            // Module Startup API
+            var meetingStartup = container.Resolve<IMeetingsStartup>();
+            meetingStartup.Initialize(
                 _configuration[MeetingsConnectionString],
                 executionContextAccessor,
                 _logger,

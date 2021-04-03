@@ -4,6 +4,7 @@ using CompanyName.MyMeetings.BuildingBlocks.Application;
 using CompanyName.MyMeetings.BuildingBlocks.Infrastructure;
 using CompanyName.MyMeetings.BuildingBlocks.Infrastructure.Emails;
 using CompanyName.MyMeetings.BuildingBlocks.Infrastructure.EventBus;
+using CompanyName.MyMeetings.Modules.Meetings.Application.Contracts;
 using CompanyName.MyMeetings.Modules.Meetings.Application.MeetingGroupProposals;
 using CompanyName.MyMeetings.Modules.Meetings.Application.MeetingGroupProposals.AcceptMeetingGroupProposal;
 using CompanyName.MyMeetings.Modules.Meetings.Application.MeetingGroups;
@@ -24,11 +25,11 @@ using ILogger = Serilog.ILogger;
 
 namespace CompanyName.MyMeetings.Modules.Meetings.Infrastructure.Configuration
 {
-    public class MeetingsStartup
+    public class MeetingsStartup : IMeetingsStartup
     {
         private static IContainer _container;
 
-        public static void Initialize(
+        public void Initialize(
             string connectionString,
             IExecutionContextAccessor executionContextAccessor,
             ILogger logger,
@@ -49,7 +50,7 @@ namespace CompanyName.MyMeetings.Modules.Meetings.Infrastructure.Configuration
             EventsBusStartup.Initialize(moduleLogger);
         }
 
-        public static void Stop()
+        public void Stop()
         {
             QuartzStartup.StopQuartz();
         }

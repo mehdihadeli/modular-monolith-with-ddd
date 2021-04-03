@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using CompanyName.MyMeetings.Modules.Meetings.Application.Contracts;
 using CompanyName.MyMeetings.Modules.Meetings.Infrastructure;
+using CompanyName.MyMeetings.Modules.Meetings.Infrastructure.Configuration;
 
 namespace CompanyName.MyMeetings.API.Modules.Meetings
 {
@@ -10,6 +11,10 @@ namespace CompanyName.MyMeetings.API.Modules.Meetings
         {
             builder.RegisterType<MeetingsModule>()
                 .As<IMeetingsModule>()
+                .InstancePerLifetimeScope();
+            
+            builder.RegisterType<MeetingsStartup>()
+                .As<IMeetingsStartup>()
                 .InstancePerLifetimeScope();
         }
     }

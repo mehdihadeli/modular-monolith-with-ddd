@@ -2,6 +2,7 @@
 
 namespace CompanyName.MyMeetings.BuildingBlocks.Infrastructure.InternalCommands
 {
+    //http://disq.us/p/25bye6l
     public class InternalCommand
     {
         public Guid Id { get; set; }

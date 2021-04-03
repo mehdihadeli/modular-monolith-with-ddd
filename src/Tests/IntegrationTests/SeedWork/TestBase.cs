@@ -32,7 +32,7 @@ namespace CompanyName.MyMeetings.IntegrationTests.SeedWork
         protected IAdministrationModule AdministrationModule { get; private set; }
 
         protected IMeetingsModule MeetingsModule { get; private set; }
-
+        protected IMeetingsStartup MeetingsStartup { get; private set; }
         protected IEmailSender EmailSender { get; private set; }
 
         protected ExecutionContextMock ExecutionContext { get; private set; }
@@ -62,6 +62,11 @@ namespace CompanyName.MyMeetings.IntegrationTests.SeedWork
 
             EventsBus = new InMemoryEventBusClient(Logger);
 
+
+            AdministrationModule = new AdministrationModule();
+            MeetingsModule = new MeetingsModule();
+            MeetingsStartup = new MeetingsStartup();
+
             AdministrationStartup.Initialize(
                 ConnectionString,
                 ExecutionContext,
@@ -74,9 +79,6 @@ namespace CompanyName.MyMeetings.IntegrationTests.SeedWork
                 Logger,
                 new EmailsConfiguration("from@email.com"),
                 EventsBus);
-
-            AdministrationModule = new AdministrationModule();
-            MeetingsModule = new MeetingsModule();
         }
 
         [TearDown]
